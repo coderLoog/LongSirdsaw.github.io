@@ -122,7 +122,7 @@ function prepareCanvas()
 	
 	outlineImage.onload = function() { resourceLoaded(); 
 	};
-	outlineImage.src ="../素材/images/watermelon-duck-outline.png";
+	outlineImage.src ="../素材/images/crayon-texture.png";
 
 	// Add mouse events
 	// ----------------
