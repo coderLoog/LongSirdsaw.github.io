@@ -28,9 +28,31 @@
 <div id="panorama"></div>
 <div id="normal_map"></div>
 <script type="text/javascript">
-    //全景图展示
+	//Getlocation的调用
+	function getLocation(){
+
+        document.getElementById('normal_map').innerHTML = '正在搜寻中，请稍候。。。';
+
+        var options = {
+            enableHighAccuracy:true, 
+            maximumAge:1000
+        }
+
+        if(navigator.geolocation){
+            //浏览器支持geolocation
+            navigator.geolocation.getCurrentPosition(onSuccess,onError,options);
+        }else{
+            //浏览器不支持geolocation
+            alert('浏览器不支持GeoLocation!');
+        }
+    }
+	// 获取成功
+    function onSuccess(position){
+		var longitude = position.coords.longitude;
+		var latitude=position.coords.latitude;
+		//全景图展示
     var panorama = new BMap.Panorama('panorama');
-    panorama.setPosition(new BMap.Point(112.98, 28.19)); //根据经纬度坐标展示全景图
+    panorama.setPosition(new BMap.Point(longitude,latitude)); //根据经纬度坐标展示全景图
     panorama.setPov({heading: -40, pitch: 6});
 
     panorama.addEventListener('position_changed', function (e) { //全景图位置改变后，普通地图中心点也随之改变
@@ -47,7 +69,7 @@
         enableHighResolution: true
     }
     var map = new BMap.Map("normal_map", mapOption);
-    var testpoint = new BMap.Point(112.98, 28.19);
+    var testpoint = new BMap.Point(longitude,latitude);
     map.centerAndZoom(testpoint, 18);
     var marker = new BMap.Marker(testpoint);
     marker.enableDragging();
@@ -59,6 +81,33 @@
             panorama.setPov({heading: -40, pitch: 6});
         }
     );
+	$("document").ready(function(){
+        getMap();
+    });
+	}
+	// 获取失败
+    function onError(error){
+        switch(error.code){
+            case 1:
+                alert("位置服务被拒绝");
+            break;
+
+            case 2:
+                alert("暂时获取不到位置信息");
+            break;
+
+            case 3:
+                alert("获取信息超时");
+            break;
+
+            case 4:
+                alert("未知错误");
+            break;
+        }
+    }
+
+    window.onload = getLocation;
+    
 </script>
 </body>
 </html>
