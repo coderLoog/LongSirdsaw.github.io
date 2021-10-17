@@ -3034,9 +3034,8 @@ a:link { -webkit-tap-highlight-color:#D55B25; }
 	position:absolute;
 	left:3290px;
 	bottom:-190px;
-	background:transparent url("../素材/images/tower-1.png") no-repeat;
-	width:84px;
-	height:300px;
+	width:92px;
+	height:435px;
 	-webkit-opacity:0;
     -khtml-opacity:0;
     -moz-opacity:0;
@@ -3045,12 +3044,39 @@ a:link { -webkit-tap-highlight-color:#D55B25; }
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
 }
-
+#tower-1 a
+{
+	border:none;
+    cursor:pointer;
+}
+#tower-1 a img{
+	border:none;
+    text-decoration:none;
+    outline:none;   
+    -webkit-transition: opacity 0.4s ease-in-out;
+    -khtml-transition: opacity 0.4s ease-in-out;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+}
+#tower-1 a:hover{
+	border:none;
+    cursor:pointer;
+}
+#tower-1 a:hover img{
+	-webkit-opacity:0.6;
+	-khtml-opacity:0.6;
+	-moz-opacity:0.6;
+	-o-opacity:0.6;
+	opacity:0.6;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+}
 #tower-1-text {
     z-index:1;
 	position:absolute;
 	left:3295px;
-	bottom:315px;
+	bottom:370px;
 	background:transparent;
 	width:75px;
 	height:auto;
@@ -4325,7 +4351,6 @@ a:link { -webkit-tap-highlight-color:#D55B25; }
 	position:absolute;
 	left:7800px;
 	bottom:100px;
-	background:transparent url("../素材/images/big-ben.png") no-repeat;
 	width:50px;
 	height:342px;
 	-webkit-opacity:0;
@@ -4336,7 +4361,33 @@ a:link { -webkit-tap-highlight-color:#D55B25; }
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
 }
-
+#big-ben a{
+	border:none;
+    cursor:pointer;
+}
+#big-ben a:hover{
+	border:none;
+    cursor:pointer;
+}
+#big-ben a img{
+	border:none;
+    text-decoration:none;
+    outline:none;   
+    -webkit-transition: opacity 0.4s ease-in-out;
+    -khtml-transition: opacity 0.4s ease-in-out;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+}
+#big-ben a:hover img{
+	-webkit-opacity:0.6;
+	-khtml-opacity:0.6;
+	-moz-opacity:0.6;
+	-o-opacity:0.6;
+	opacity:0.6;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+}
 /* ////////////////////////////////////////////////// */
 
 /* ********** END - BIG BEN ************************* */

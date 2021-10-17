@@ -882,7 +882,7 @@ $(document).ready(function() {
         </ul>
         <!-- /// TEXT /// -->
         <!-- /// TOWERS /// -->
-        <div id="tower-1"></div>
+        <div id="tower-1"><a href="../素材/插件/jq22pd-4648757a-d85e-11e4-a8c2-00163e001348/播放器.html"><img src="../素材/images/tower-22.gif" alt="影院"/></a></div>
         <div id="tower-1-text">
             <h1>760万</h1>
             <h2>人次旅游<br />选择<br />湖南</h2>
@@ -999,7 +999,7 @@ $(document).ready(function() {
         <!-- /// BILLBOARD /// -->
         <div id="billboard"></div>
         <!-- /// BIG BEN /// -->
-        <div id="big-ben"></div>
+        <div id="big-ben"><a href="../素材/插件/html5-3d-infinite-flow/index.html"><img src="../素材/images/big-ben.png" alt="阅读室"></a></div>
         <!-- /// EIFFEL TOWER /// -->
         <div id="eiffel-tower"></div>
         <!-- /// HOUSES /// -->
@@ -1190,27 +1190,79 @@ $(document).ready(function() {
 <!-- ********** END - WRAPPER ************************* -->
 
 <!-- ////////////////////////////////////////////////// -->    
-<script>
-        var eyel = document.querySelectorAll('#eyeLeft');
+<script type="text/javascript">
+		function browserRedirect() {
+           var sUserAgent = navigator.userAgent.toLowerCase();
+           if (/ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/.test(sUserAgent)) {
+               //跳转移动端页面
+               var eyeLeftPosition = {
+  start: [70, 78],
+  end: [100, 110]
+};
+
+var eyeRightPosition = {
+  start: [150, 78],
+  end: [190, 110]
+};
+
+var eyeLeftCenterPosition = {
+  x: (eyeLeftPosition.end[0] - eyeLeftPosition.start[0]) / 2 + eyeLeftPosition.start[0],
+  y: (eyeLeftPosition.end[1] - eyeLeftPosition.start[1]) / 2 + eyeLeftPosition.start[1]
+};
+
+var eyeRightCenterPosition = {
+  x: (eyeRightPosition.end[0] - eyeRightPosition.start[0]) / 2 + eyeRightPosition.start[0],
+  y: (eyeRightPosition.end[1] - eyeRightPosition.start[1]) / 2 + eyeRightPosition.start[1]
+};
+
+var r = 30;
+
+var eyeLeft = document.querySelector('#eyeLeft');
+var eyeRight = document.querySelector('#eyeRight');
+
+if (window.DeviceOrientationEvent) {
+
+  window.addEventListener('deviceorientation', function (event) {
+
+    let {alpha, beta, gamma} = event;
+
+    eyeLeft.style.left = eyeLeftCenterPosition.x + gamma / 90 * r + 'px';
+    eyeRight.style.left = eyeRightCenterPosition.x + gamma / 90 * r + 'px';
+    eyeLeft.style.top = eyeRight.style.top 
+                      = eyeLeftCenterPosition.y + beta / 180 * r + 'px';
+
+    eyeRight.style.transform = eyeLeft.style.transform 
+                         = eyeRight.style.WebkitTransform 
+                         = eyeLeft.style.WebkitTransform 
+                         = 'rotate(' + beta + 'deg)';
+  }, false);
+} else {
+  document.querySelector('body').innerHTML = '浏览器不支持DeviceOrientationEvent';
+}
+           } else {
+            var eyel = document.querySelectorAll('#eyeLeft');
 		var eyerde = document.querySelectorAll('#eyeRight');
         window.addEventListener('mousemove',function(event){
          
             eyel.forEach(function(eyel){
-            let angle = Math.atan2(event.pageX-eyel.getBoundingClientRect()
-            .left-eyel.clientLeft/2,event.pageY-eyel.getBoundingClientRect().top
+            let angle = Math.atan2(event.clientX-eyel.getBoundingClientRect()
+            .left-eyel.clientLeft/2,event.clientY-eyel.getBoundingClientRect().top
             -eyel.clientTop/2);
             let rot = angle * 180 / Math.PI * -1 - 90 ;
             eyel.style.transform = `rotate(${rot}deg)`;
                });
 			eyerde.forEach(function(eyerde){
-            let angle = Math.atan2(event.pageX-eyerde.getBoundingClientRect()
-            .left-eyerde.clientLeft/2,event.pageY-eyerde.getBoundingClientRect().top
+            let angle = Math.atan2(event.clientX-eyerde.getBoundingClientRect()
+            .left-eyerde.clientLeft/2,event.clientY-eyerde.getBoundingClientRect().top
             -eyerde.clientTop/2);
             let rot = angle * 180 / Math.PI * -1 - 90 ;
             eyerde.style.transform = `rotate(${rot}deg)`;
                })
         })
-</script>
+           }
+ }
+	browserRedirect(); 
+	</script>
 </body>
 
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////// -->
