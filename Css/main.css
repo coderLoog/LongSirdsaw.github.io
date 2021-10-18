@@ -1633,7 +1633,10 @@ a:link { -webkit-tap-highlight-color:#D55B25; }
     margin:0px 10px 0px 10px;
     text-align:center;
 }
-
+.wecar a{
+	  border:none;
+    cursor:pointer;
+}
 .hill-logos-logo {    
     width:45px;
     height:45px;
@@ -5673,11 +5676,11 @@ a:link { -webkit-tap-highlight-color:#D55B25; }
 
 #eyeLeft{
     background: transparent url("../素材/images/eyeleft.png") no-repeat;
-    width: 41px;
-    height: 42px;
+    width: 29px;
+    height: 30px;
     position: absolute;
-    left: 39px;
-    top: 42px;
+    left: 43px;
+    top: 52px;
    
 }
 
@@ -5685,11 +5688,11 @@ a:link { -webkit-tap-highlight-color:#D55B25; }
 #eyeRight{
     background: transparent url("../素材/images/eyeright.png") no-repeat;
     background-size: cover;
-    width: 41px;
-    height: 42px;
+    width: 29px;
+    height: 30px;
     position: absolute;
-    left: 110px;
-    top: 42px;
+    left: 116px;
+    top: 52px;
 }
 
 #glass{
