@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>潇湘影院在线播放：建军大业</title>
+	<link rel="stylesheet" href="dist/css/danmuplayer.css">
+    <script src="../../../Js/jquery-1.11.1.min.js"></script>
+<script src="dist/js/danmuplayer.js"></script>
+	<style>
+		body{
+			min-width: 1300px;
+			background:-webkit-linear-gradient(#f51d1d,#f7eeee);/*for safari5.1-6.0*/
+			background:-o-linear-gradient(#f51d1d,#f7eeee);/*Opera 11.1-12.0*/
+			background:-moz-linear-gradient(#f51d1d,#f7eeee);/*firefox 3.6-15*/
+			background:linear-gradient(#f51d1d,#f7eeee) no-repeat;/*标准语法，必须放在最后*/
+		}
+		ul{
+			list-style: none;
+		}
+		ul li{
+			display: inline;
+			list-style: none;
+			padding-left: 60px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="danmup">	
+	</div>
+	<ul>
+		<li><p>播放其它影片：</p></li>
+		<li><a href="播放器2.html"><img src="images/建国大业.png" alt="建国大业"/></a></li>
+		<li><a href="播放.html"><img src="images/湖南.png" alt="建国大业"/></a></li>
+		<li><a href="播放4.html"><img src="images/八佰.png" alt="建国大业"/></a></li>
+	</ul>
+	<script>
+	$("#danmup").danmuplayer({
+	src:"dist/Cd1.mp4",       //视频源
+  width:800,            //视频宽度
+  height:445            //视频高度
+});
+	</script>
+</body>
+</html>
